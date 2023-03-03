@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import './assets/theme/bootstrap.min.css';
+
+
+input, 
+button {
+    display: inline-block;
+    min-height: 40px;
+}
+
+
