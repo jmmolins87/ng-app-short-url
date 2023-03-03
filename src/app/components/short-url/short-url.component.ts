@@ -9,10 +9,15 @@ export class ShortUrlComponent implements OnInit {
 
   public nameUrl: string = ''
   public urlProcessed: string = '';
+  public isProcessedUrl: boolean = false
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  getUrlProcessed() {
+    this.isProcessedUrl = true;
   }
 
 }
