@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShortUrlComponent implements OnInit {
 
-  public nameUrl: string = ''
-  public urlProcessed: string = '';
+  public nameUrl: string = '';
+  public urlShort: string = '';
   public isProcessedUrl: boolean = false
 
   constructor() { }
@@ -18,6 +18,7 @@ export class ShortUrlComponent implements OnInit {
 
   getUrlProcessed() {
     this.isProcessedUrl = true;
+    console.log( this.nameUrl );
   }
 
 }

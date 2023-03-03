@@ -19,6 +19,7 @@
     <div class="col-8">
         <input 
             *ngIf="isProcessedUrl" 
+            [(ngModel)]="urlShort"
             type="text" 
             class="form-control" 
             placeholder="Su Url">
