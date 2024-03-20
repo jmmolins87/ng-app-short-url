@@ -1,27 +1,32 @@
-<div class="row align-items-center">
-    <div class="col-8">
-        <input 
-            [(ngModel)]="nameUrl"
-            type="text"
-            class="form-control" 
-            placeholder="Ingrese una Url">
-    </div>
-    <div class="col-4">
-        <button 
-            (click)="getUrlProcessed()"
-            [ngClass]="nameUrl == '' ? 'disabled' : ''"
-            class="btn btn-outline-primary w-100">
-            Añadir
-        </button>
-    </div>
+<div *ngIf="showError" class="alert alert-dismissible alert-danger text-center">
+    <strong>{{ textError | uppercase }}</strong> 
 </div>
-<div class="row mt-4">
-    <div class="col-8">
-        <input 
-            *ngIf="isProcessedUrl" 
-            [(ngModel)]="urlShort"
-            type="text" 
-            class="form-control" 
-            placeholder="Su Url">
+<div class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-8">
+            <input 
+                [(ngModel)]="nameUrl"
+                type="text"
+                class="form-control" 
+                placeholder="Ingrese una Url">
+        </div>
+        <div class="col-4">
+            <button 
+                (click)="getUrlProcessed()"
+                class="btn btn-outline-primary w-100">
+                Añadir
+            </button>
+        </div>
     </div>
+    <div class="row mt-4">
+        <div class="col-8">
+            <input 
+                *ngIf="isProcessedUrl" 
+                [(ngModel)]="urlShort"
+                type="text" 
+                class="form-control" 
+                placeholder="Su Url">
+        </div>
+    </div>
+    <app-spinner *ngIf="loading"></app-spinner>
 </div>

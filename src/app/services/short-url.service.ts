@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,11 +8,16 @@ import { Injectable } from '@angular/core';
 export class ShortUrlService {
 
   public url: string = 'https://api-ssl.bitly.com/v4/shorten';
-  public token: string = 'd816c339c7fb5e7f41c104295299e80a604a588a';
+  public token: string = '';
 
   constructor( private http: HttpClient ) { }
 
-  getUrlShort() {
-    
+  getUrlShort( urlName: string ): Observable<any> {
+
+    const body = {
+      long_url: urlName
+    }
+
+    return this.http.post( this.url, body );
   }
 }
